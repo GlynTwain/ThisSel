@@ -1,0 +1,16 @@
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\ThisSel.exe
+C:\Users\GlynTwain\source\repos\ThisSel\obj\Debug\netcoreapp3.1\ThisSel.csprojAssemblyReference.cache
+C:\Users\GlynTwain\source\repos\ThisSel\obj\Debug\netcoreapp3.1\ThisSel.AssemblyInfoInputs.cache
+C:\Users\GlynTwain\source\repos\ThisSel\obj\Debug\netcoreapp3.1\ThisSel.AssemblyInfo.cs
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\WebDriver.dll
+C:\Users\GlynTwain\source\repos\ThisSel\obj\Debug\netcoreapp3.1\ThisSel.csproj.CopyComplete
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\ThisSel.deps.json
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\ThisSel.runtimeconfig.json
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\ThisSel.runtimeconfig.dev.json
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\ThisSel.dll
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\ThisSel.pdb
+C:\Users\GlynTwain\source\repos\ThisSel\obj\Debug\netcoreapp3.1\ThisSel.dll
+C:\Users\GlynTwain\source\repos\ThisSel\obj\Debug\netcoreapp3.1\ThisSel.pdb
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\GlynTwain\source\repos\ThisSel\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
