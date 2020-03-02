@@ -11,7 +11,7 @@ namespace ThisSel
         [TestMethod]
         static void Main(string[] args)
         {
-            Console.WriteLine("Привет, запускаю тестирование приложения !");
+            Console.WriteLine("Hello world");
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             //driver.Manage().Timeouts();
