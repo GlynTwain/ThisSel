@@ -63,6 +63,52 @@ namespace ThisSel
             CreateOffer();
         }
 
+        
+
+        private void CreateOffer()
+        {
+            
+            IWebElement InputName = driver.FindElement(By.Name("name"));
+            InputName.SendKeys(arrOffer[0]);
+            Thread.Sleep(2000);
+
+            IWebElement InputKey = driver.FindElement(By.Name("key"));
+            InputKey.SendKeys(arrOffer[1]);
+            Thread.Sleep(2000);
+
+            
+
+            IWebElement InputFieldCategory = driver.FindElement(By.Id("mat-input-2"));
+            OnClick(InputFieldCategory, nameof(InputFieldCategory));
+            Thread.Sleep(1000);           
+
+            ReadOnlyCollection<IWebElement> AllCategory = driver.FindElements(By.CssSelector("option.ng-star-inserted"));
+            foreach (IWebElement element in AllCategory)
+            {              
+                PrintArrElements(nameof(AllCategory), element.Text);
+            }
+
+            OnClick(AllCategory[1], AllCategory[1].Text);
+
+
+            IWebElement InputSelectNetworks = driver.FindElement(By.Name("networks"));
+            OnClick(InputSelectNetworks, nameof(InputSelectNetworks));
+            Thread.Sleep(1000);
+            
+            IWebElement SelectNetwork = driver.FindElement(By.Name("1"));
+            OnClick(SelectNetwork, nameof(SelectNetwork));
+        }
+
+        private void AddPoint(IWebElement element, string nameElement)
+        {
+            
+        }
+
+        private void PrintArrElements(string arr, string element)
+        {
+            Console.WriteLine(arr+ " have the following elements:");
+            Console.WriteLine(" - " + element);
+        }
         private void OnClick(IWebElement element, string nameElement)
         {
 
@@ -76,39 +122,5 @@ namespace ThisSel
                 Console.WriteLine(nameElement + passed);
             }
         }
-
-        private void CreateOffer()
-        {
-            
-            IWebElement InputName = driver.FindElement(By.Name("name"));
-            InputName.SendKeys(arrOffer[0]);
-            Thread.Sleep(2000);
-
-            IWebElement InputKey = driver.FindElement(By.Name("key"));
-            InputKey.SendKeys(arrOffer[1]);
-            Thread.Sleep(2000);
-
-            ReadOnlyCollection<IWebElement> Inputs = driver.FindElements(By.CssSelector("mat-form-field.mat-form-field.ng-tns-c15-19.mat-primary.mat-form-field-type-mat-native-select.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.ng-untouched.ng-pristine.ng-valid.mat-form-field-should-float"));
-            foreach (IWebElement Input in Inputs)
-            {
-                string buf = Input.Text;
-                Console.WriteLine(buf); 
-
-            }
-
-            IWebElement InputFieldCategory = driver.FindElement(By.Id("mat-input-2"));
-            OnClick(InputFieldCategory, nameof(InputFieldCategory));
-
-            IWebElement InputFieldCategoryFerst = driver.FindElement(By.LinkText(" iuluil "));
-            OnClick(InputFieldCategoryFerst, nameof(InputFieldCategoryFerst));
-            //Console.WriteLine(InputFieldCategory.Text);
-
-        }
-
-        private void AddPoint(IWebElement element, string nameElement)
-        {
-            
-        }
-
     }
 }
