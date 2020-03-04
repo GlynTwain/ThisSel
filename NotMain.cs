@@ -16,17 +16,22 @@ namespace ThisSel
 
         private string passed = " -- Passed";
         private string error = " -- Error";
-        private string textOffer = "Offers";
-        private string textDashboard = "Dashboard";
 
-        private IWebElement ButtonOffers = null;
-        private IWebElement ButtonDashboard = null;
+        private string textOffer = "Offers";// Для работы с правым меню
+        private string textDashboard = "Dashboard";// *Скорее всего это костыль, следует переделать
 
-        private string[] arrOffer = { "myName","ThisKey","ICategory","INetworks","IGroup"};
+        private IWebElement ButtonOffers = null;// Хранение элемента правого меню
+        private IWebElement ButtonDashboard = null;// Хранение элемента правого меню
 
-        public IWebDriver driver = null;
+        private string[] arrOffer = { "testName", "testKey", "ICategory","INetworks","IGroup"};// Данные для полей при создании Офера?
+
+        public IWebDriver driver = null;// Внёс из-за того что передаётся в один лишь метод, а мне удобно делить на несклько и там работать
         #endregion=================== EndDate
 
+
+        #region ================= Metods
+
+        //Начальные действия по тесту
         public void StartTest(IWebDriver driverBasic)
         {
             driver = driverBasic;
@@ -35,14 +40,13 @@ namespace ThisSel
             Thread.Sleep(2000); 
 
             IWebElement ButtonMeny = driver.FindElement(By.CssSelector("div.mat-slide-toggle-thumb"));
-            OnClick(ButtonMeny, nameof(ButtonMeny));
-            Thread.Sleep(2500);
+            OnClick(ButtonMeny, nameof(ButtonMeny));// Метод для кликов с сообщением о результате выполнения
+            Thread.Sleep(2500);// Ожидания, для прогрузки страниц
 
             ReadOnlyCollection<IWebElement> ButtonsRightMeny = driver.FindElements(By.CssSelector("button.mat-button.mat-button-base"));
             foreach (IWebElement ButtonsRMeny in ButtonsRightMeny)
             {
                 string buf = ButtonsRMeny.Text;
-                //Console.WriteLine(buf);
                 if (buf == textOffer)
                 {
                     ButtonOffers = ButtonsRMeny;
@@ -52,7 +56,7 @@ namespace ThisSel
                     ButtonDashboard = ButtonsRMeny;
                 }
                 
-            }         
+            }  // Пробегаюсь по элементу содержащему кнопки в правом меню и раздаю их переменным       
             OnClick(ButtonOffers, nameof(ButtonOffers));
             Thread.Sleep(2000);
 
@@ -63,8 +67,7 @@ namespace ThisSel
             CreateOffer();
         }
 
-        
-
+        //Создание офера
         private void CreateOffer()
         {
             
@@ -75,8 +78,6 @@ namespace ThisSel
             IWebElement InputKey = driver.FindElement(By.Name("key"));
             InputKey.SendKeys(arrOffer[1]);
             Thread.Sleep(2000);
-
-            
 
             IWebElement InputFieldCategory = driver.FindElement(By.Id("mat-input-2"));
             OnClick(InputFieldCategory, nameof(InputFieldCategory));
@@ -106,8 +107,8 @@ namespace ThisSel
 
         private void PrintArrElements(string arr, string element)
         {
-            Console.WriteLine(arr+ " have the following elements:");
-            Console.WriteLine(" - " + element);
+            Console.WriteLine();
+            Console.WriteLine(arr + " have the following elements -- " + element);
         }
         private void OnClick(IWebElement element, string nameElement)
         {
@@ -122,5 +123,7 @@ namespace ThisSel
                 Console.WriteLine(nameElement + passed);
             }
         }
+
+        #endregion
     }
 }

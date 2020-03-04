@@ -11,18 +11,17 @@ namespace ThisSel
         [TestMethod]
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            //driver.Manage().Timeouts();
-            //PageLoadTimeout(10, TimeUnit.SECONDS)
+            Console.WriteLine("Start testing!");
+            IWebDriver driver = new ChromeDriver(); //Установить хром как браузер, и открыть
+            if (driver == null) Console.WriteLine("Ошибка: Chrome Driver не удалось создать!");
+            driver.Manage().Window.Maximize();// Развернуть на весь экран
+            
+            NotMain Test = new NotMain(); // Создать экземпляр класса для тестирования
 
-            NotMain Test = new NotMain();
+            Test.StartTest(driver); // Начать тестирование и передать драйвер браузера
 
-            Test.StartTest(driver);
-
-            //driver.Quit();
-            Console.ReadKey();
+            //driver.Quit(); // Дорабоать 
+            Console.ReadKey(); // Для того что бы консоль 
         }
         
     }
